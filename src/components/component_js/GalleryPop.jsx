@@ -1,62 +1,37 @@
-import { useState } from "react"
-export const GalleryPop = ({data}) => {
+import React from 'react';
 
-    const [photosItems, setphotosItems] = useState(null)
+export const GalleryPop = () => {
 
-    const selectImage = ( ) =>{
+  const images = [
+    { name: "Imagen 1",
+      url: "src/img/Bajo Peso.png" },
+    { name: "Imagen 2",
+      url: "src/img/Bajo Peso.png" },
+    { name: "Imagen 3",
+      url: "src/img/Bajo Peso.png" },
+    { name: "Imagen 4",
+    url: "src/img/Bajo Peso.png" },
+    { name: "Imagen 5",
+    url: "src/img/Bajo Peso.png" },
+    { name: "Imagen 6",
+    url: "src/img/Bajo Peso.png" },
 
-        switch(photosItems){
-            case 1:
-                photo = "img/Ahri.png",
-                nombre= 'Ashe',
-                apellido= 'League of Legends'
-                return
-            case 2:
-                photo= "img/Ashe.png",
-                nombre= 'Ashe',
-                apellido= 'League of Legends'
-                return
-            case 3:
-                photo= "img/Ashe.png",
-                nombre= 'Ashe',
-                apellido= 'League of Legends'
-                return
-            case 4:
-                photo= "img/Ashe.png",
-                nombre= 'Ashe',
-                apellido= 'League of Legends'
-                return
-            case 5:
-                photo= "img/Ashe.png",
-                nombre= 'Ashe',
-                apellido= 'League of Legends'
-                return
-            case 6:
-                photo= "img/Ashe.png",
-                nombre= 'Ashe',
-                apellido= 'League of Legends'
-                return
-            case 7:
-                photo= "img/Ashe.png",
-                nombre= 'Ashe',
-                apellido= 'League of Legends'
-                return
-            case 8:
-                photo= "img/Ashe.png",
-                nombre= 'Ashe',
-                apellido= 'League of Legends'
-                return
-        }
-    }
-    selectImage(data)
+  ];
 
   return (
-    <>
-        <div className="card-component">
-        <div className="image_container"  onClick={() => setphotosItems(1)}>
-            HI
-        </div>
-        </div>
-    </>
-  )
-}
+    <div>
+      <h2 className='main-title'>Galería de Imágenes</h2>
+      <div className="image-gallery">
+        {images.map((image, index) => (
+          <div key={index} className="image-card">
+            <img src={image.url} alt={image.name} />
+            <p>{image.name}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+
+

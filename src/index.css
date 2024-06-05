@@ -39,3 +39,9 @@
     font-size: 1rem;
     font-weight: 1rem;
 }
+.image-gallery{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    gap: 5rem;
+}
